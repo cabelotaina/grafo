@@ -8,15 +8,15 @@ Definição
 
 De acordo com o professor Antonio Carlos Mariani INE/UFSC um *grafo*, não orientado, visite [página com representações de grafos](http://www.inf.ufsc.br/grafos/represen/), possui as seguintes ações básicas:
 
-G.adicionaVértice(v) 	"Adiciona um novo vértice em G"
-G.removeVértice(v) 	"Remove um  vértice de G, juntamente com todas as conexões"
-G.conecta(v1,v2) 	"Conecta os vértices v1 e v2 em G"
-G.desconecta(v1,v2) 	"Desconecta os vértices v1 e v2 em G"
-G.ordem Inteiro 	"Retorna o número de vértices de G"
-G.vértices Conjunto 	"Retorna um conjunto contendo os vértices de G"
-G.umVértice Vertice 	"Retorna um vértice qualquer de G"
-G.adjacentes(v)Conjunto "Retorna um conjunto contendo os vértices adjacentes a v em G"
-G.grau(v)Inteiro 	"Retorna o número de vértices adjacentes a v em G"
+* G.adicionaVértice(v) 	"Adiciona um novo vértice em G"
+* G.removeVértice(v) 	"Remove um  vértice de G, juntamente com todas as conexões"
+* G.conecta(v1,v2) 	"Conecta os vértices v1 e v2 em G"
+* G.desconecta(v1,v2) 	"Desconecta os vértices v1 e v2 em G"
+* G.ordem Inteiro 	"Retorna o número de vértices de G"
+* G.vértices Conjunto 	"Retorna um conjunto contendo os vértices de G"
+* G.umVértice Vertice 	"Retorna um vértice qualquer de G"
+* G.adjacentes(v)Conjunto "Retorna um conjunto contendo os vértices adjacentes a v em G"
+* G.grau(v)Inteiro 	"Retorna o número de vértices adjacentes a v em G"
 
 Descrição
 ---------
