@@ -3,6 +3,7 @@ class Grafo
 		# usuario deve passar argumento informando se o grafo é direcionado ou não?
 		# atualmente o algoritimo é apenas para grafo simples		
 		@vertices = Hash.new
+		@arestas = Hash.new
 	end
 	# "Adiciona um novo vértice em G"
 	# G.adicionaVértice(v) 	
@@ -18,11 +19,17 @@ class Grafo
 	end
 	# "Conecta os vértices v1 e v2 em G"
 	# G.conecta(v1,v2)
-	def conectar(vertice1,vertice2)
+	def conectar(vertice1,vertice2, peso)
 		# se for usarmos dijkstra temos que passar peso positivo como parametro.
-		@vertices[vertice1][vertice2] = "peso?"
-		@vertices[vertice2][vertice1] = "peso?"
+		@vertices[vertice1][vertice2] = peso
+		@vertices[vertice2][vertice1] = peso
+		@arestas[[vertice1,vertice2]] = peso
 	end
+
+	def arestas
+		@arestas
+	end
+
 	# "Desconecta os vértices v1 e v2 em G"
 	# G.desconecta(v1,v2)
 	def desconectar(vertice1, vertice2)
@@ -47,7 +54,7 @@ class Grafo
 	# "Retorna um conjunto contendo os vértices adjacentes a v em G"
 	# G.adjacentes(v)Conjunto
 	def adjacentes(vertice)
-		@vertices[vertice].keys
+		@vertices[vertice]#.keys
 	end
 	# "Retorna o número de vértices adjacentes a v em G"
 	# G.grau(v)Inteiro
