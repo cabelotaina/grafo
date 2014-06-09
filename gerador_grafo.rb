@@ -29,11 +29,12 @@ require 'set'
 # E/Q - lista de arestas ordenadas por custo
 arestas = grafo.arestas
 arestas_ordenadas = arestas.sort_by{|aresta,custo| custo}
-# VS
-vertices = []
-grafo.vertices.each{ |v| vertices.push(Set.new [v])}
 # T
 arvore = Grafo.new 
+# VS 
+vertices = []
+grafo.vertices.each{ |v| vertices.push(Set.new [v])}
+
 
 
 
@@ -43,6 +44,7 @@ while vertices.size > 1 do
  aresta = arestas_ordenadas.shift
  v = aresta[0][0]
  w = aresta[0][1]
+ peso = aresta[1]
  conjunto_v = Set.new
  conjunto_w = Set.new
  vertices.each{ |conjunto| 
@@ -55,8 +57,15 @@ while vertices.size > 1 do
  }
 
  if conjunto_v != conjunto_w
-	 
+     conjunto_novo =  conjunto_v + conjunto_w
+     vertices.push conjunto_novo
+     vertices.delete conjunto_v
+     vertices.delete conjunto_w
+     arvore.adicionaVertice v
+     arvore.adicionaVertice w
+     arvore.conectar(v,w,peso)
  end
-
-
+ 
 end
+
+arvore
